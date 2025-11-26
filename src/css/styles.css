@@ -121,6 +121,14 @@ main {
   line-height: 23px;
 }
 
+.container .profile-data .info span {
+  font-size: 15px;  
+  font-weight: 400;
+  line-height: 23px;
+  display: block;
+}
+
+
 /* REPOSITORIES */
 
 .container .profile-data .repositories h2{
