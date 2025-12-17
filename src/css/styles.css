@@ -142,16 +142,31 @@ main {
   justify-content: center;
 }
 
-.container .profile-data .repositories ul li a{
+.li-repo{
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   border: 1px solid grey;  
   margin: 20px;
-  display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
+  gap: 15px;
+  cursor: pointer;
 }
 
-.container .profile-data .repositories ul li a:hover{
+.li-repo a {
+  font-weight: bold;
+}
+
+.li-itens span{
+  background-color: blueviolet;
+  color: #ffffff;
+  padding: 6px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.container .profile-data .repositories .li-repo:hover{
   background-color:hotpink;
   color: #fff
 }
@@ -159,6 +174,43 @@ main {
 .container .profile-data.hide{
   display: none;
 }
+
+/* EVENTS */
+
+.container .profile-data .events h2{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container .profile-data .events ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container .profile-data .events ul li {
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  transition: 0.3s ease-in-out;
+}
+
+.events ul li a {
+  font-weight: bold;
+}
+
+.container .profile-data .events ul li:hover{
+  background-color:hotpink;
+  color: #fff;
+  
+}
+
+
+
 
 @media (max-width: 1280px) {
   .container {
