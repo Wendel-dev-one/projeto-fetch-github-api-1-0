@@ -1,12 +1,13 @@
 # Projeto de Busca de Perfil do GitHub
 
-Este é um projeto para a web que utiliza a API do GitHub para buscar e exibir informações de perfil de um usuário, juntamente com seus repositórios públicos.
+Este é um projeto para a web que utiliza a API do GitHub para buscar e exibir informações de perfil de um usuário, juntamente com seus repositórios públicos e eventos recentes.
 
 ## 🚀 Funcionalidades
 
 -   **Busca de Usuário**: Permite que você insira um nome de usuário do GitHub e busque por seu perfil.
 -   **Exibição de Perfil**: Mostra informações detalhadas do usuário, como avatar, nome, bio, número de seguidores e de pessoas que segue.
 -   **Lista de Repositórios**: Exibe os repositórios públicos do usuário, com links diretos para eles no GitHub.
+-   **Eventos Recentes**: Mostra os eventos mais recentes do usuário no GitHub.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -33,6 +34,7 @@ O projeto está organizado da seguinte forma para manter o código limpo e modul
         │   ├── screen.js    # Objeto para manipular e renderizar dados na tela
         │   └── user.js      # Objeto para modelar e armazenar os dados do usuário
         └── services/
+            ├── events.js       # Serviço para buscar os eventos do usuário na API do GitHub
             ├── repositories.js # Serviço para buscar os repositórios na API do GitHub
             └── user.js         # Serviço para buscar os dados do usuário na API do GitHub
 ```
