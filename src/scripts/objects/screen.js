@@ -1,4 +1,4 @@
-
+// Mensagens padrão de exibição
 const messages = {
     noName: 'Não possui nome cadastrado 😓',
     noBio: 'Não possui bio cadastrado 😓',
@@ -8,9 +8,10 @@ const messages = {
     events: 'Eventos',
 };
 
+
 const screen = {
     userProfile: document.querySelector('.profile-data'),
-
+    // Exibe as informações do usuário
     renderUser(user) {
         this.userProfile.innerHTML = `
             <div class="info">
@@ -25,6 +26,7 @@ const screen = {
             </div>
         `;
 
+        // Exibe os repositórios do usuário
         if (user.repositories.length > 0) {
             const repositoriesItens = user.repositories.map(repo => `
                 <li class="li-repo">
@@ -45,13 +47,14 @@ const screen = {
             `;
         }
 
+        // Exibe os eventos do usuário
         if (user.events.length > 0) {
             const eventsItens = user.events.map(event => {
                 const messagePushEvent = event.payload?.commits?.[0]?.message || messages.noCommit;
                 if (event.type === 'PushEvent') {
-                    return `<li><a href="https://github.com/${event.repo.name}">${event.repo.name}<span>: -${messagePushEvent}</span></a></li>`;
+                    return `<li><a href="https://github.com/${event.repo.name}">${event.repo.name}<span>: &#8594; ${messagePushEvent}</span></a></li>`;
                 } else if (event.type === 'CreateEvent') {
-                    return `<li><a href="https://github.com/${event.repo.name}">${event.repo.name}<span>: -${messages.noCommit}</span></a></li>`;
+                    return `<li><a href="https://github.com/${event.repo.name}">${event.repo.name}<span>: &#8594; ${messages.noCommit}</span></a></li>`;
                 }
                 return '';
             }).join('');
@@ -64,6 +67,7 @@ const screen = {
         }
     },
 
+    // Exibe mensagem de usuário não encontrado
     renderNotFound() {
         this.userProfile.innerHTML = `
             <div>
